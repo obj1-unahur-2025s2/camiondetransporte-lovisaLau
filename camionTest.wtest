@@ -1,9 +1,21 @@
 import camion.*
+import cosas.*
 
-describe "group of test for camion" {
+describe "test del camion" {
 
-  test "first test" {
-    assert.that(true)
+  method initialize(){ // setea el arranque del test
+    camion.cargar(knigtTRider)
+    camion.cargar(arena)
+    arena.peso(200)
+    ladrillos.cantidad(10)
+    camion.cargar(ladrillos)
+  }
+  test "El camion tiene un peso total de 1720" {
+    assert.equals(1720, camion.pesoTotal())
+  }
+
+  test "El camion puede circular por ruta"{
+    assert.that(camion.puedeCircularRuta(10)) // revisar
   }
 
 }
